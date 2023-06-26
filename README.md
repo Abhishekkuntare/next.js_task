@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Solution Overview:
 
-## Getting Started
+To accomplish the given task, we will build a web application using Next.js, React.js, and Firebase as the backend. The application will have the following flow:
 
-First, run the development server:
+1.User Login:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+We will enable login with Gmail using Firebase Authentication.
+Users will be able to log in using their Gmail accounts, which will provide authentication credentials for further API calls and data storage.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.Fetching Data from OpenAI API:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+After the user is logged in, we will make a call to the OpenAI API using the appropriate API endpoint and parameters.
+We will handle the authentication by including the necessary headers or credentials with the API request.
+The response data from the API will be received asynchronously and displayed on the screen.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3.Displaying Data:
 
-## Learn More
+We will create a React component to render the fetched data on the screen.
+The component will receive the data as props and display it in a suitable format, such as a table or a list.
 
-To learn more about Next.js, take a look at the following resources:
+4.Saving Data to Firebase:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We will add a button to save the fetched data to a Firebase database.
+On button click, we will trigger a function that will use the Firebase SDK to store the data in a designated Firebase table (collection).
+We will handle the authentication by ensuring that the user is logged in before allowing the data to be saved.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5.Showing Saved Data:
 
-## Deploy on Vercel
+To show the saved data, we will retrieve it from the Firebase table and display it on the screen.
+We will fetch the data using the Firebase SDK and render it in a React component similar to how the fetched data was displayed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6.Assumptions:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1.You have a Firebase project set up with the necessary authentication configuration.
+2.You have obtained the appropriate API key or access token for making requests to the OpenAI API.
+3.The specific data to be fetched from the OpenAI API and the structure of the Firebase table are not defined, so 4.we will make those design decisions based on the requirements.
+5.Basic knowledge of Next.js, React.js, and Firebase is assumed.
+6.To get started with the implementation, you can follow these steps:
